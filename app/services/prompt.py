@@ -17,7 +17,7 @@ Considere também que uma mulher do Estado de Pernambuco enviou a seguinte mensa
 
 "{message}"
 
-Com base nesta mensagem e nos serviços listados anteriormente, responda diretamente como ela pode obter ajuda com os serviços ofertados. Não dê conselhos de serviços fora desta lista fornecida. Apenas nos casos em que a mensagem não tem relação com os serviços ofertados, indique buscar apoio com a ouvidoria da mulher. Caso a mensagem seja relacionada a um dos serviços ofertados, não adicione os dados de contato da ouvidoria na resposta. Caso ela queira saber quais são os serviços ofertados, informe a lista de serviços de maneira sucinta.
+Com base nesta mensagem e nos serviços listados anteriormente, responda diretamente como ela pode obter ajuda com os serviços ofertados. Não dê conselhos de serviços fora desta lista fornecida. Apenas nos casos em que a mensagem não tem relação com os serviços ofertados, indique buscar apoio com a ouvidoria da mulher. Caso a mensagem seja relacionada a um dos serviços ofertados, não adicione os dados de contato da ouvidoria na resposta.
 """
 
     def handle_message(self, message):
@@ -37,9 +37,7 @@ Com base nesta mensagem e nos serviços listados anteriormente, responda diretam
         service_lines = []
         service_offers = self.__repository.get_service_offers()
 
-        for group_index, group in enumerate(service_offers):
-            service_lines.append(f'Grupo {group_index + 1}: "{group.name}"')
-
+        for group in service_offers:
             for offer in group.service_offers:
                 service_lines.append(f'- "{offer.name}": {offer.description}')
             service_lines.append("")
