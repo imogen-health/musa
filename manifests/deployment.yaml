@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: musa
+  namespace: imogen
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: musa
+  template:
+    metadata:
+      labels:
+        app: musa
+    spec:
+      containers:
+        - name: musa
+          image: ImageName
+          env:
+            - name: OPENAI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: openai-data
+                  key: key
+          ports:
+            - containerPort: 5000
+          resources:
+            limits: 
+              memory: "1024Mi"
+              cpu: "1000m"
+            requests: 
+              memory: "512Mi"
+              cpu: "200m"

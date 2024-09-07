@@ -1,0 +1,22 @@
+name: ImogenWebClient.Release
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    name: Setup, Build, and Deploy to GKE
+    uses: ./.github/workflows/Generic.BuildAndPublishDockerImage.yaml
+    secrets: inherit
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
+    with:
+      namespace: imogen
+      image_name: musa
+      deployment_name: musa
+      manifests: manifests
+      dockerfile: ./Dockerfile
+      context: .
