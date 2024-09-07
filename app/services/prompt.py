@@ -17,7 +17,7 @@ Considere também que uma mulher do Estado de Pernambuco enviou a seguinte mensa
 
 "{message}"
 
-Com base nesta mensagem e nos serviços listados anteriormente, responda diretamente como ela pode obter ajuda com os serviços ofertados. Não dê conselhos de serviços fora desta lista fornecida. Apenas nos casos em que a mensagem não tem relação com os serviços ofertados, indique buscar apoio com a ouvidoria da mulher. Caso a mensagem seja relacionada a um dos serviços ofertados, não adicione os dados de contato da ouvidoria na resposta.
+Com base nesta mensagem e nos serviços listados anteriormente, responda diretamente como ela pode obter ajuda com os serviços ofertados. Não dê conselhos de serviços fora desta lista fornecida. Apenas nos casos em que a mensagem não tem relação com os serviços ofertados, indique buscar apoio com a ouvidoria da mulher. Caso a mensagem seja relacionada a um dos serviços ofertados, não adicione os dados de contato da ouvidoria na resposta. Evite respostas com mais de 1000 caracteres.
 """
 
     def handle_message(self, message):
