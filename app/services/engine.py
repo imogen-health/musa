@@ -8,7 +8,7 @@ def handle_message(message):
     }
 
     chat_completion = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4o-mini",
         messages=[chat_message],
     )
 
